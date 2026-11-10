@@ -302,7 +302,10 @@
       }).join("");
     }
 
+    // Jump to a screen by adding #7 to the end of the address.
     let step = 0;
+    const jump = parseInt(location.hash.slice(1), 10);
+    if (jump >= 1 && jump <= steps.length) { step = jump - 1; }
 
     function show() {
       const s = steps[step];
